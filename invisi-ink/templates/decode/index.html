@@ -1,0 +1,45 @@
+{% extends 'layout.html' %} {% block main %}
+
+<main class="space-y-4">
+	<header class="flex justify-between items-center w-2/3 m-auto p-2">
+		<h1 class="font-bold text-4xl">Decoding</h1>
+		<nav>
+			<a href="/encode" class="underline">encode</a>
+		</nav>
+	</header>
+	<article class="w-2/3 m-auto p-2">
+		<form
+			action="/decode/"
+			enctype="multipart/form-data"
+			method="post"
+			class="space-y-4"
+		>
+			<!-- IMAGE -->
+			<section class="flex-col">
+				<label for="image" class="text-xl block font-bold capitalize">
+					image
+				</label>
+				<input
+					required
+					type="file"
+					name="image"
+					id="image"
+					class="block"
+					accept="image/*"
+				/>
+			</section>
+
+			<button
+				class="font-bold text-white rounded-md capitalize bg-black border-2 border-black hover:border-gray-900 hover:bg-gray-900 w-full p-2"
+				type="submit"
+			>
+				OK
+			</button>
+		</form>
+	</article>
+	<article>
+		<!-- DISPLAY IMAGE HERE IF EXITS -->
+	</article>
+</main>
+
+{% endblock %}

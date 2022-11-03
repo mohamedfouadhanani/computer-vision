@@ -1,0 +1,80 @@
+{% extends 'layout.html' %} {% block main %}
+
+<main class="space-y-4">
+	<header class="flex justify-between items-center w-2/3 m-auto p-2">
+		<h1 class="font-bold text-4xl">Encoding</h1>
+		<nav>
+			<a href="/decode" class="underline">decode</a>
+		</nav>
+	</header>
+	<article class="w-2/3 m-auto p-2">
+		<form
+			action="/encode/"
+			enctype="multipart/form-data"
+			method="post"
+			class="space-y-4"
+			id="form"
+		>
+			<!-- IMAGE -->
+			<section class="flex-col">
+				<label for="image" class="text-xl block font-bold capitalize">
+					image
+				</label>
+				<input
+					required
+					type="file"
+					name="image"
+					id="image"
+					class="block"
+					accept="image/*"
+				/>
+			</section>
+			<!-- MESSAGE -->
+			<section class="flex-col">
+				<label for="message" class="text-xl block font-bold capitalize">
+					message
+				</label>
+				<textarea
+					required
+					name="message"
+					id="message"
+					class="w-full border-2 border-black rounded-md p-2"
+				></textarea>
+			</section>
+			<!-- FONT SCALE -->
+			<section class="flex-col">
+				<label for="fontscale" class="text-xl block font-bold capitalize">
+					font scale
+				</label>
+				<input
+					required
+					type="number"
+					id="fontscale"
+					name="fontscale"
+					min="1"
+					value="1"
+					class="w-full border-2 border-black rounded-md p-2"
+				/>
+			</section>
+			<section class="space-y-2">
+				<button
+					class="hover:bg-gray-100 font-bold border-2 border-black hover:border-gray-900 text-black hover:text-gray-900 rounded-md bg-transparent capitalize w-full p-2"
+					id="preview"
+				>
+					preview
+				</button>
+				<button
+					class="font-bold text-white rounded-md capitalize bg-black border-2 border-black hover:border-gray-900 hover:bg-gray-900 w-full p-2"
+					type="submit"
+				>
+					OK
+				</button>
+			</section>
+		</form>
+	</article>
+	<article>
+		<!-- DISPLAY IMAGE HERE IF EXITS -->
+	</article>
+</main>
+
+{% endblock %}
