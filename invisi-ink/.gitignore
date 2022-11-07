@@ -1,3 +1,4 @@
-invisi-ink/image.png
-invisi-ink/rinnegan.png
-invisi-ink/static/images/preview.jpg
+image.png
+rinnegan.png
+static/images/*.*
+__pycache__/
